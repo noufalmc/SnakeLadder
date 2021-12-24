@@ -7,9 +7,11 @@ public class SnakeLadder {
     public static void  main(String[] args)
     {
         System.out.println("Welcome to Snake Ladder");
-        int Start=0;
+        int Start=1;
         Random ra=new Random();
+        int Counter=0;
         while (Start!=100) {
+            ++Counter;
             int Die = ra.nextInt(6) + 1;
             int Play = ra.nextInt(3);
             switch (Play) {
@@ -37,6 +39,7 @@ public class SnakeLadder {
             }
         }
         System.out.println("Start is "+Start);
+        System.out.println("Total Number of Dice Was Played"+Counter);
     }
 
 }
