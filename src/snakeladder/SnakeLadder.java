@@ -7,39 +7,103 @@ public class SnakeLadder {
     public static void  main(String[] args)
     {
         System.out.println("Welcome to Snake Ladder");
-        int Start=1;
+        int Start1=0;
+        int Start2=0;
         Random ra=new Random();
-        int Counter=0;
-        while (Start!=100) {
-            ++Counter;
-            int Die = ra.nextInt(6) + 1;
+        int Counter1=0;
+        int Counter2=0;
+        int Repeat=0;
+        int i=0;
+        while(Start1<100 && Start2<100)
+        {
+            Repeat=1;
+        while (Start1!=100 && Start2!=100 && Repeat!=0) {
+            int Die = ra.nextInt(6)+1;
             int Play = ra.nextInt(3);
-            switch (Play) {
-                case IS_LADDER:
-                    if((Start+Die)<=100)
-                    {
-                        Start += Die;
-                    }
-                    System.out.println("Got Ladder Start value is "+Start);
-                    break;
-                case IS_SNAKE:
-                    if((Start-Die)<0)
-                    {
-                        Start=0;
-                    }
-                    else
-                    {
-                        Start-=Die;
-                    }
-                    System.out.println("Snake Bites Start value "+Start);
-                    break;
-                default:
-                    System.out.println("No Play Option Start value "+Start);
-                    Start = Start;
+            if(i%2==0) {
+                ++Counter1;
+                switch (Play) {
+                    case IS_LADDER:
+                        Repeat=1;
+                        if ((Start1 + Die) <= 100) {
+                            Start1 +=Die;
+                        }
+                        System.out.println("Got Ladder Start1 value is " + Start1);
+                        break;
+                    case IS_SNAKE:
+                        Repeat=0;
+                        if ((Start1 - Die) < 0) {
+                            Start1 = 0;
+                        } else {
+                            Start1-= Die;
+                        }
+                        System.out.println("Snake Bites Start1 value " + Start1);
+                        break;
+                    default:
+                        Repeat=0;
+                        System.out.println("No Play Option Start1 value " + Start1);
+                        Start1 = Start1;
+                }
             }
+            else
+            {
+                ++Counter2;
+                switch (Play) {
+                    case IS_LADDER:
+                        Repeat=1;
+                        if ((Start2 + Die) <= 100) {
+                            Start2 += Die;
+                        }
+                        System.out.println("Got Ladder Start2 value is " + Start2);
+                        break;
+                    case IS_SNAKE:
+                        Repeat=0;
+                        if ((Start2 - Die) < 0) {
+                            Start2=0;
+                        } else {
+                            Start2-=Die;
+                        }
+                        System.out.println("Snake Bites Start2 value " + Start2);
+                        break;
+                    default:
+                        Repeat=0;
+                        System.out.println("No Play Option Start2 value " + Start2);
+                        Start2 = Start2;
+                }
+            }
+            System.out.println("Start1= " + Start1);
+            System.out.println("Start2= " + Start2);
         }
-        System.out.println("Start is "+Start);
-        System.out.println("Total Number of Dice Was Played"+Counter);
+            ++i;
+        }
+        if(Start1>Start2)
+        {
+            System.out.println("**********************************************************" +
+                    "CONGRATULATIONS" +
+                    "*********************************************************************");
+            System.out.println("Person1 winner of The Game" + Start1);
+            System.out.println("**********************************************************" +
+                    "***********" +
+                    "*********************************************************************");
+        }
+        else
+        {
+            System.out.println("**********************************************************" +
+                    "CONGRATULATIONS" +
+                    "*********************************************************************");
+            System.out.println("Person2 winner of The Game" + Start2);
+            System.out.println("**********************************************************" +
+                    "***************" +
+                    "*********************************************************************");
+        }
+        System.out.println("**********************************************************" +
+                "CONGRATULATIONS" +
+                "*********************************************************************");
+        System.out.println("Person1 Dice Thrown " +Counter1+" Score "+Start1);
+        System.out.println("Person2 Dice Thrown " +Counter2+" Score "+Start2);
+        System.out.println("**********************************************************" +
+                "***************" +
+                "*********************************************************************");
     }
 
 }
