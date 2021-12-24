@@ -10,22 +10,7 @@ public class SnakeLadder {
         int Start=0;
         Random ra=new Random();
         int Die=ra.nextInt(6)+1;
-        int Play=ra.nextInt(3);
-        switch (Play)
-        {
-            case IS_LADDER:
-                Start+=Die;
-                System.out.println("Got Ladder");
-                break;
-            case IS_SNAKE:
-                Start-=Die;
-                System.out.println("Snake Bites");
-                break;
-            default:
-                System.out.println("No Play Option");
-                Start=Start;
-        }
-        System.out.println("Start is "+Start);
+        System.out.println("Die is "+Die);
     }
 
 }
