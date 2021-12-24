@@ -14,7 +14,10 @@ public class SnakeLadder {
             int Play = ra.nextInt(3);
             switch (Play) {
                 case IS_LADDER:
-                    Start += Die;
+                    if((Start+Die)<=100)
+                    {
+                        Start += Die;
+                    }
                     System.out.println("Got Ladder Start value is "+Start);
                     break;
                 case IS_SNAKE:
