@@ -21,7 +21,7 @@ public class SnakeLadder {
             int Die = ra.nextInt(6)+1;
             int Play = ra.nextInt(3);
             if(i%2==0) {
-                ++Counter1;
+                Counter1++;
                 switch (Play) {
                     case IS_LADDER:
                         Repeat=1;
@@ -47,7 +47,7 @@ public class SnakeLadder {
             }
             else
             {
-                ++Counter2;
+                Counter2++;
                 switch (Play) {
                     case IS_LADDER:
                         Repeat=1;
@@ -74,7 +74,7 @@ public class SnakeLadder {
             System.out.println("Start1= " + Start1);
             System.out.println("Start2= " + Start2);
         }
-            ++i;
+            i++;
         }
         if(Start1>Start2)
         {
